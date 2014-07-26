@@ -1,0 +1,3 @@
+[
+  { "keys": ["ctrl+f"], "command": "find_family" }
+]

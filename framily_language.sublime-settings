@@ -1,0 +1,97 @@
+{
+  "base": ".git",
+  "family": {
+    "JavaScript": {
+      "members": [
+        {
+          "title": "Model",
+          "prepend": "/",
+          "append": ".model.js"
+        }, 
+        {
+          "title": "View",
+          "prepend": "/",
+          "append": ".view.js"
+        }, 
+        {
+          "title": "Presenter",
+          "prepend": "/",
+          "append": ".presenter.js"
+        }
+      ]
+    },
+    "Ruby": {
+      "members": [
+        {
+          "title": "Model",
+          "prepend": "app/models/",
+          "append": ".rb"
+        },
+        {
+          "title": "Controller",
+          "prepend": "app/controllers/",
+          "append": "s_controller.rb"
+        }
+      ]
+    },
+    "/Users/Thomas/Projects/Redspot": {
+      "members": [
+        {
+          "title": "Rails Model",
+          "prepend": "app/models/",
+          "append": ".rb"
+        },
+        {
+          "title": "Rails Controller",
+          "prepend": "app/controllers/",
+          "append": "s_controller.rb"
+        },
+        {
+          "title": "Haml Index",
+          "prepend": "app/views/",
+          "append": "s/index.haml"
+        },
+        {
+          "title": "Haml New",
+          "prepend": "app/views/",
+          "append": "s/new.haml"
+        },
+        {
+          "title": "Haml Show",
+          "prepend": "app/views/",
+          "append": "s/show.haml"
+        },
+        {
+          "title": "Haml Edit",
+          "prepend": "app/views/",
+          "append": "s/edit.haml"
+        },
+        {
+          "title": "Haml Partial: *",
+          "prepend": "app/views/",
+          "append": "s/_*.haml"
+        },
+        {
+          "title": "JS Model",
+          "prepend": "public/javascripts/",
+          "append": ".model.js"
+        }, 
+        {
+          "title": "JS View",
+          "prepend": "public/javascripts/",
+          "append": ".view.js"
+        }, 
+        {
+          "title": "JS Presenter",
+          "prepend": "public/javascripts/",
+          "append": ".presenter.js"
+        }, 
+        {
+          "title": "JS Other: *",
+          "prepend": "public/javascripts/",
+          "append": ".*.js"
+        }
+      ]
+    }
+  }
+}
