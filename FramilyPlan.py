@@ -11,9 +11,10 @@ class FindFamilyCommand(sublime_plugin.WindowCommand):
 
 
 class FramilyMember:
-    def __init__(self, title, path):
+    def __init__(self, title, path, base_path):
         self.title = title
         self.path = path
+        self.base_path = base_path
 
     def __hash__(self):
         return hash(self.path)
@@ -22,7 +23,7 @@ class FramilyMember:
         return self.path
 
     def __cmp__(self, other):
-        return cmp(self.path, other.path)
+        return cmp(self.path, (self.base_path + other.path))
 
     def to_array(self):
         return [self.title, self.path]
@@ -86,9 +87,9 @@ class FramilyFileFinder:
         glob_return =  glob.glob(self.base_path + "/" + member['prepend'] + self.base_name + member['append'])
         for glober in glob_return:
             title = member['title'].replace('*', self.convertFileNameToTitle(glober))
-            new_member = FramilyMember(title, glober)
+            new_member = FramilyMember(title, glober, self.base_path)
             if new_member not in self.framily_members:
-                real_glob_return.append(FramilyMember(title, glober.replace(self.base_path, "")))
+                real_glob_return.append(FramilyMember(title, glober.replace(self.base_path, ""), self.base_path))
         return real_glob_return
 
 
@@ -100,7 +101,7 @@ class FramilyFileFinder:
             else:
                 exists_return = os.path.exists(self.base_path + "/" + member['prepend'] + self.base_name + member['append'])
                 if exists_return:
-                    self.framily_members.append(FramilyMember(member['title'], exists_return.replace(self.base_path, "")))
+                    self.framily_members.append(FramilyMember(member['title'], exists_return.replace(self.base_path, ""), self.base_path))
 
 
     def get_framily_array(self):
